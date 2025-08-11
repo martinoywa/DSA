@@ -67,19 +67,27 @@ class LinkedList:
 
     def pop(self):
         # Remove last node
-        # edge case, single node
-        if self.head.next == None:
-            self.head = self.tail = None
-
+        # edge cases, empty and single node
         current = self.head
-        previous = None
-        while current.next != None: # get to the end
-            previous = current
-            current = current.next
-        previous.next = None
-        self.tail = previous
+        if self.head == None:
+            return None
+        elif self.head.next == None:
+            self.head = self.tail = None
+        else:
+            # current = self.head
+            previous = None
+            while current.next != None: # get to the end
+                previous = current
+                current = current.next
+            previous.next = None
+            self.tail = previous
+        # self.length -= 1
+        return current
+
 
 LL = LinkedList(1)
+LL.pop()
+LL.pop()
 LL.append(2)
 LL.append(3)
 LL.append(4)
