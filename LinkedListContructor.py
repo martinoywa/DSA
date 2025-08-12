@@ -88,6 +88,17 @@ class LinkedList:
         # self.length -= 1
         return current
 
+    def pop_first(self):
+        # edge cases, empty, single nodes
+        current = self.head
+        if self.head == None:
+            return None
+        elif self.head.next == None:
+            self.head = self.tail = None
+        else:
+            self.head = self.head.next
+        current.next = None # detatch the removed node
+        return current
 
 LL = LinkedList(1)
 LL.pop()
@@ -98,4 +109,6 @@ LL.append(4)
 LL.append(5)
 LL.pop()
 LL.prepend(10)
+LL.prepend(300)
+LL.pop_first()
 LL.print_list()
