@@ -21,7 +21,7 @@ class LinkedList:
         new_node = Node(value)
         
         if self.head == None:
-            self.head = self.tail = Node(value)
+            self.head = self.tail = new_node
         else:
             self.tail.next = new_node
             self.tail = new_node
@@ -31,7 +31,7 @@ class LinkedList:
         new_node = Node(value)
 
         if self.head == None:
-            self.head = self.tail = Node(value)
+            self.head = self.tail = new_node
         else:
             new_node.next = self.head
             self.head = new_node
