@@ -29,8 +29,12 @@ class LinkedList:
     def prepend(self, value):
         # create new node then prepend
         new_node = Node(value)
-        new_node.next = self.head
-        self.head = new_node
+
+        if self.head == None:
+            self.head = self.tail = Node(value)
+        else:
+            new_node.next = self.head
+            self.head = new_node
 
     def insert(self, index, value):
         # find index then insert new node
@@ -79,8 +83,8 @@ class LinkedList:
             while current.next != None: # get to the end
                 previous = current
                 current = current.next
-            previous.next = None
             self.tail = previous
+            self.tail.next = None
         # self.length -= 1
         return current
 
