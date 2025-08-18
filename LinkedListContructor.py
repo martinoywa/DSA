@@ -54,11 +54,11 @@ class LinkedList:
                 if current_index == index:
                     # TODO may need to keep track of previous node or increment index first
                     """
-                    current_index += 1
+                    current_index += 1 # TODO this means we're always checking the next node before reaching it
                     if current_index == index:
                         temp = current.next
                         current.next = new_node
-                        new_node = temp
+                        new_node = temp # TODO fix: current.next.next = temp
                         return
                     current = current.next
                     """
