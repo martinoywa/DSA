@@ -37,6 +37,7 @@ class LinkedList:
             self.head = new_node
 
     def insert(self, index, value):
+        # TODO edge case for out of bounds index i.e index < 0 or index >= self.length
         # find index then insert new node
         # if index == 0, prepend, if index == -1 or last index, append
         # otherwise insert middle.
